@@ -22,7 +22,7 @@ You should write one script which does this for a logistic regression classifier
 ### Contents
 | Folder/File  | Contents| Description |
 | :---:   | :---: | :--- |
-|```out```|*log_clf_report, nn_clf_report.txt*| The folder contains the classification reports from running the logisitic classification and Neural Network classification scripts. |
+|```out```|*log_clf_report.txt, nn_clf_report.txt*| The folder contains the classification reports from running the logisitic classification and Neural Network classification scripts. |
 |```src```|**data.py, logistic_classification.py, nn_classification.py**| The folder contains scripts to preprocess data (**data.py**), run a logistic classifier (**logistic_classification.py**) and a neural network classifier (**nn_classification.py**).|
 |README.md|-| Description of repository and how to run the code|
 |requirements.txt|-|Packages required to run the code|
@@ -42,7 +42,7 @@ As the dataset consists of color images, all images are converted to greyscale. 
 
 **Logistic Regression Classifier**
 
-A logistic regression classifier is trained using *scikit-learn*. As there are 10 outcome classes, it is a Multinomial Logistic Regression. The code is designed to allow for different methods of solvers and regularization penalties, depending on what arguments is passed (see **Usage**). The results from the classifier can be seen in the ```out``` folder.
+A logistic regression classifier is trained using *scikit-learn*. As there are 10 outcome classes, it is a Multinomial Logistic Regression. The code is designed to allow for different methods of solvers and regularization penalties, depending on what arguments are passed (see **Usage**). The results from the classifier can be seen in the ```out``` folder.
 
 
 **Neural Network classifier**
@@ -54,9 +54,9 @@ A neural network is trained using the *MLP (Multilayer Linear Perceptron)* class
 
 All code for this assignment was designed to run on an *Ubuntu 22.10* operating system. 
 
-To reproduce the results in this repository, clone it repository using ```git clone```.
+To reproduce the results in this repository, clone it using ```git clone```.
 
-It is important that you run all scripts from the *assignment2-image-classification-louisebphansen* folder, i.e., your terminal should look like this:
+It is important that you run all scripts from the main folder, i.e., *assignment2-image-classification-louisebphansen*. Your terminal should look like this:
 
 ```
 --your_path-- % assignment2-image-classification-louisebphansen %
@@ -79,7 +79,7 @@ To run both the Logistic Classification script and the Neural Network Classifica
 Alternatively, you can run the scripts separately or define the arguments yourself. Again, it is important that you run it from the main folder. From the terminal, first activate the virtual environment, then run the script(s) with the desired arguments:
 
 ```
-source env/bin/activate
+source env/bin/activate # activate virtual environment
 
 python3 src/logistic_classification.py --penalty <penalty> --tol <tol> -- solver <solver> --clf_report_name <clf_report_name> 
 
