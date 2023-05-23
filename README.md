@@ -1,7 +1,7 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10449089&assignment_repo_type=AssignmentRepo)
+
 # Assignment 2 - Classification benchmarks with Logistic Regression and Neural Networks
 
-This repository contains the code for Assignment 2 in the Visual Analytics course on the Cultural Data Science elective. 
+This repository contains the code for Assignment 2 in the Visual Analytics course on the Cultural Data Science elective at Aarhus University, 2023. 
 
 ### Contributions
 The code was created by me, but code from the notebooks provided throughout the course has been used and adapted.
@@ -18,22 +18,21 @@ You should write code which does the following:
 
 You should write one script which does this for a logistic regression classifier and one which does it for a neural network classifier. In both cases, you should use the machine learning tools available via scikit-learn.
 
-### Methods and contents
 
-#### Contents
+### Contents
 | Folder/File  | Contents| Description |
 | :---:   | :---: | :--- |
-|```out```|log_clf_report, nn_clf_report.txt| The folder contains the classification reports from running the logisitic classification and Neural Network classification scripts. |
-|```src```|data.py, logistic_classification.py, nn_classification.py| The folder contains scripts to preprocess data (**data.py**), run a logistic classifier (**logistic_classification.py**) and a neural network classifier (**nn_classification.py**).|
+|```out```|*log_clf_report, nn_clf_report.txt*| The folder contains the classification reports from running the logisitic classification and Neural Network classification scripts. |
+|```src```|**data.py, logistic_classification.py, nn_classification.py**| The folder contains scripts to preprocess data (**data.py**), run a logistic classifier (**logistic_classification.py**) and a neural network classifier (**nn_classification.py**).|
 |README.md|-| Description of repository and how to run the code|
 |requirements.txt|-|Packages required to run the code|
 |run.sh|-|Bash script for running logistic classifier and neural network classifier with predefined arguments|
 |setup.sh|-|Bash script for setting up virtual environment and installing packages|
 
-#### Data
+### Data
 This assignment uses the cifar10 dataset, which consists of 50,000 training images and 10,000 test images across 10 different categories. It is already split into training and testing data which can be directly loaded through the Keras wrapper for Tensorflow. 
 
-#### Methods
+### Methods
 *The following section describes the methods used in the provided Python scripts.*
 
 **Data preprocessing**
@@ -48,14 +47,14 @@ A logistic regression classifier is trained using *scikit-learn*. As there are 1
 
 **Neural Network classifier**
 
-A neural network is trained using the *MLP (Multilayer Linear Perceptron)* class from *scikit-learn*. The MLP classifier creates a fully connected feed-forward neural network with hidden layers. The final layer consists of a classification, predicting the probability of each of the 10 output classes. Like the logistic classifier, the code is designed to allow for different hyperparameters, depending on the arguments passed (see **Usage**). The script also saves a classification report in the ```out``` folder. 
+A neural network is trained using the *MLP (Multilayer Linear Perceptron)* class from *scikit-learn*. The MLP classifier creates a fully connected feed-forward neural network with hidden layers. The final layer consists of a classification layer, predicting the probability of the ten classes. Like the logistic classifier, the code is designed to allow for different hyperparameters, depending on the arguments passed (see **Usage**). The script also saves a classification report in the ```out``` folder. 
 
 
 ### Usage
 
-All code for this project was designed to run on an *Ubuntu 22.10* operating system. 
+All code for this assignment was designed to run on an *Ubuntu 22.10* operating system. 
 
-To reproduce the results in this repository, clone this repository using ```git clone```.
+To reproduce the results in this repository, clone it repository using ```git clone```.
 
 It is important that you run all scripts from the *assignment2-image-classification-louisebphansen* folder, i.e., your terminal should look like this:
 
@@ -63,8 +62,8 @@ It is important that you run all scripts from the *assignment2-image-classificat
 --your_path-- % assignment2-image-classification-louisebphansen %
 ```
 
-##### Setup 
-First, ensure that you have installed the **venv** package for Python (if not, run ```sudo apt-get update``` and ```sudo apt-get install python3-venv```). 
+#### Setup 
+First, ensure that you have installed the *venv* package for Python (if not, run ```sudo apt-get update``` and ```sudo apt-get install python3-venv```). 
 
 To set up the virtual environment, run ```bash setup.sh``` from the terminal.
 
@@ -87,9 +86,9 @@ python3 src/logistic_classification.py --penalty <penalty> --tol <tol> -- solver
 ``` 
 **Arguments**
 
-- **penalty:** Regularization penalty. Default: 'None'
+- **penalty:** Regularization penalty. Can be 'None', 'l2', 'l1' or 'elasticnet' Default: 'None'
 - **tol:** Tolerance for stopping criteria. Default: 0.1
-- **solver:** Optimization algorithm. Default: 'saga'
+- **solver:** Optimization algorithm. See different options and limitations on sklearn documentation. Default: 'saga'
 - **clf_report_name:** Name of the output classification report. Default: 'log_clf_report.txt'
 
 ```
